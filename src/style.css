@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* background: #E5E5E5; */
+  background: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-header {
+  background: #E17F93;
+  color: white;
+}
+
+.layout-wrapper {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.bags-title {
+  font-family: Libre Baskerville;
+font-size: 28px;
+font-style: normal;
+font-weight: 700;
+line-height: 30px;
+letter-spacing: 0em;
+text-align: left; 
+
+}
+.banner {
+  position: absolute;
+  height: 650px;
+  background: #7fe1b0;
+}
+
+.section-headers {
+  font-family: Libre Baskerville;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-right: 4px;
+  font-size: 28px;
+  line-height: 30px;
+  height: 60px;
+  color: #000000;
+  mix-blend-mode: normal;
+}
+
+.ellipse {
+  /* position: relative; */
+  max-width: 120px;
+  height: 120px;
+  display: inline-block;
+  /* left: 56px; */
+}
+
+.ellipse-text {
+  position: relative;
+  /* height: 42px;  */
+  /* font-family: Roboto; */
+  /* font-style: normal; */
+  /* font-weight: normal; */
+  font-size: 1rem;
+  /* line-height: 42px;  */
+  /* mix-blend-mode: normal; */
+}
+
+.Applink {
+  color: #61dafb;
+  background: #E17F93;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: rgb(39, 52, 68);
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+  height: 300px;
+  width: 100%;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 300px;
+  width: 100%;
+}
+
+  
+      .product-item-content {
+          border: 1px solid var(--surface-d);
+          border-radius: 3px;
+          margin: .3rem;
+          text-align: center;
+          padding: 2rem 0;
+      }
+
+      .product-image {
+          width: 50%;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+      }  
