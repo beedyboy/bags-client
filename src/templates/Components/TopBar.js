@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Toolbar } from "primereact/toolbar";
-
+ 
 const TopBar = () => {
   const leftContents = (
     <React.Fragment>
@@ -10,20 +10,28 @@ const TopBar = () => {
       <div className="p-text-lowercase">+ (234) 8181575752</div>
     </React.Fragment>
   );
-
   const rightContents = (
     <React.Fragment>
-      {/* <Button icon="pi pi-search" className="p-mr-2" />
-            <Button icon="pi pi-calendar" className="p-button-success p-mr-2" />
-            <Button icon="pi pi-times" className="p-button-danger" /> */}
-
-      <div className="p-text-lowercase">wishlist</div>
+      <div className="p-d-flex p-jc-between p-ac-between">
+        <a target="_blank" href="/facebook">
+          {" "}
+          <i className="pi pi-facebook" />
+        </a>
+        <a target="_blank" href="/twitter">
+          {" "}
+          <i className="pi pi-twitter" />
+        </a>
+      </div>
     </React.Fragment>
   );
   return (
-    <div>
-      <Toolbar className="app-header" left={leftContents} right={rightContents} />
-    </div>
+    <Fragment>
+      <Toolbar
+        className="app-header"
+        left={leftContents}
+        right={rightContents}
+      />
+    </Fragment>
   );
 };
 

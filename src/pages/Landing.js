@@ -8,19 +8,26 @@ import BannerCard from "../widgets/BannerCard";
 import SubscribeBox from "../widgets/SubscribeBox";
 import { observer } from "mobx-react-lite";
 const Landing = () => {
-    const productStore = useContext(ProductsStores);
-    const { brandedProduct, featuredProduct, arrivalProduct, getProducts, loading, allProduct  } = productStore;
-  console.log({allProduct})
-    useEffect(() => {
-        getProducts();
-      }, []);
-    
-    return (
+  const productStore = useContext(ProductsStores);
+  const {
+    brandedProduct,
+    featuredProduct,
+    arrivalProduct,
+    getProducts,
+    loading,
+    allProduct,
+  } = productStore;
+  console.log({ allProduct });
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  return (
     <>
       <div className="p-d-flex p-flex-column p-jc-between p-ac-between">
-        <div className="banner2">
+        {/* <div className="banner"> */}
           <SlideBanner />
-        </div>
+        {/* </div> */}
         <Categories />
 
         <div
@@ -42,9 +49,15 @@ const Landing = () => {
             bg="#DDC0B4"
           />
         </div>
-        <div className="p-d-flex p-flex-column p-jc-between p-ai-center"
-          style={{ width: "100%" }}>
-            <LatestProduct branded={brandedProduct} featured={featuredProduct} arrival={arrivalProduct} />
+        <div
+          className="p-d-flex p-flex-column p-jc-between p-ai-center"
+          style={{ width: "100%" }}
+        >
+          <LatestProduct
+            branded={brandedProduct}
+            featured={featuredProduct}
+            arrival={arrivalProduct}
+          />
         </div>
         <div
           className="p-d-flex p-p-5"

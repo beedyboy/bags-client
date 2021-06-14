@@ -5,35 +5,31 @@ const BannerCard = (props) => {
   const { image, heading, sub, path, bg } = props;
   return (
     <Fragment>
+      {/* <div className="p-d-flex"> */}
+        
       <div
-        className="p-grid p-mr-2 p-ml-2"
-        style={{ height: "259px", width: '100%', background: `${bg}` }}
+        className="p-grid p-p-6 white-color p-m-3"
+        style={{ height: "249px", width: "95%",  background: `${bg}` }}
       >
-        <div className="p-col-8 p-col-align-end">
+        <div className="p-col-7 p-col-align-end">
           <p>{heading}</p>
-          <p>{sub}</p>
-          <Button label="Shop Now" className="p-button-plain" />
+          <p
+            className="p-text-bold"
+            style={{ fontFamily: "Libre Baskerville", letterSpacing: "0.5em" }}
+          >
+            {sub}
+          </p>
+          <Button
+            label="Shop Now"
+            className="p-button-rounded app-color bg-white"
+          />
         </div>
-        <div className="p-col-4">
+        <div className="p-col-5">
           <img src={image} alt={image} width="100%" />
         </div>
       </div>
-      {/* <div
-        className="p-d-flex p-jc-between p-mr-2 p-ml-2"
-        style={{ height: "259px", background: `${bg}` }}
-      >
-        <div
-          className="p-d-flex p-flex-column p-jc-end"
-          style={{ width: "60%", marginLeft: "1rem" }}
-        >
-          <p>{heading}</p>
-          <p>{sub}</p>
-          <Button label="Shop Now" className="p-button-link p-button-plain" />
-        </div>
-        <div style={{ width: "40%", marginRight: "1rem" }}>
-          <img src={image} alt={image} width="100%" />
-        </div>
-      </div> */}
+   
+      {/* </div> */}
     </Fragment>
   );
 };

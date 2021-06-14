@@ -8,7 +8,7 @@ import Utils from "./localStorage";
   test: "https://bags.youarecaptured.com/",
 };
 
-export const serverUrl = env.test;
+export const serverUrl = env.local;
 
 const backend = axios.create({
   baseURL: serverUrl,

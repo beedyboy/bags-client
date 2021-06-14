@@ -31,6 +31,7 @@ const images =[
       <img
         src={item.src}
         alt={item.alt}
+        className="banner"
         style={{ width: "100%", display: "block" }}
       />
     );

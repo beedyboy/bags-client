@@ -8,10 +8,12 @@ const NormalLayout = (props) => {
   return (
     <Fragment>
       <div className="layout-wrapper">
+        <PerfectScrollbar>
         <TopBar />
         <TopMenu />
-        <PerfectScrollbar>{children}</PerfectScrollbar>
+          {children}
         <Footer />
+        </PerfectScrollbar>
       </div>
     </Fragment>
   );

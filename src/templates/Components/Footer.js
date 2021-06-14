@@ -2,9 +2,11 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className="p-grid p-dir-column" style={{ background: "#C4C4C4" }}>
+    <footer>
+      
+    <div className="p-grid p-p-3 p-dir-column" style={{ background: "#C4C4C4" }}>
    
-      <div className="p-col-5">
+      <div className="p-col-6">
       <div
           className="p-d-flex p-flex-column p-jc-between p-ac-between" >
           <div className="p-text-center p-text-bold p-mb-4">Map Location</div>
@@ -27,8 +29,8 @@ export const Footer = () => {
             <div className="p-text-center p-text-bold p-mb-4">Let Us Help You</div>
           </div>
           <div className="p-col-12">
-            <address className="p-text-center">
-              Contact Us Monday through Friday From 9am to 6pm CAT, <br /> and
+            <address className="p-text-center p-text-wrap">
+              Contact Us Monday through Friday From 9am to 6pm CAT, and
               Saturday & Sunday from 10am to 6pm CAT
             </address>
           </div>
@@ -36,9 +38,9 @@ export const Footer = () => {
             <div className="p-grid p-justify-center">
               <div className="p-col-3">Address:</div>
               <div className="p-col-9">
-                <address>
-                  Shekinah Plaza, 23 Ajao road, Off Adeniyi Jones
-                  <br /> (Close to Time Square Event Center). Ikeja, Lagos,
+              <address className="p-text-center p-text-wrap">
+             Shekinah Plaza, 23 Ajao road, Off Adeniyi Jones
+                   (Close to Time Square Event Center). Ikeja, Lagos,
                   Nigeria.
                 </address>
               </div>
@@ -48,14 +50,14 @@ export const Footer = () => {
           <div className="p-col-12">
             <div className="p-grid p-justify-center">
               <div className="p-col-3">Helpline:</div>
-              <div className="p-col-9">+2348181575752</div>
+              <div className="p-col-9 p-text-center p-text-wrap">+2348181575752</div>
             </div>
           </div>
 
           <div className="p-col-12">
             <div className="p-grid p-justify-center">
               <div className="p-col-3">Email:</div>
-              <div className="p-col-9">Bagsnmore@yahoo.com</div>
+              <div className="p-col-9 p-text-center p-text-wrap">bagsnmore@yahoo.com</div>
             </div>
           </div>
         </div>
@@ -64,5 +66,6 @@ export const Footer = () => {
     
     </div>
    
+    </footer>
   );
 };

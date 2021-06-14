@@ -6,13 +6,15 @@ import "primeicons/primeicons.css";
 import "primeflex/primeflex.css"; 
 import "./style.css";
 import Routes from "./engine/Routes";
+import { ScrollTop } from 'primereact/scrolltop';
 
 const App = () => {
   return (
-    <Fragment>
-      <Router>
+        <Fragment>
+    <Router>
         <Routes />
       </Router>
+          <ScrollTop threshold={200} />
     </Fragment>
   );
 };

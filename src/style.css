@@ -3,20 +3,56 @@
 }
 
 html {
-  height: 100%;
+  height: 100%; 
 }
-
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
   /* background: #E5E5E5; */
+  font-family: 'Raleway', sans-serif !important;
   background: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  min-height: 100%; 
+}
+
+.app-color {
+  color: #E17F93;
+
+}
+
+.white-color {
+  color: #F2F0FF;
+}
+
+.bg-white {
+  background: #F2F0FF;
 }
 
 .app-header {
   background: #E17F93;
-  color: white;
+  padding: 0 28px;
+  height: 38px;
+  line-height: 38px;
+  font-size: 12px;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0;
+}
+
+footer {
+  font-size: 15px;
+  padding: 0px;
+  font-family: Libre Baskerville;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .layout-wrapper {
@@ -26,19 +62,21 @@ body {
   justify-content: space-between;
   min-height: 100vh;
 }
+
 .bags-title {
   font-family: Libre Baskerville;
-font-size: 28px;
-font-style: normal;
-font-weight: 700;
-line-height: 30px;
-letter-spacing: 0em;
-text-align: left; 
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
 
 }
+
 .banner {
-  position: absolute;
-  height: 650px;
+  /* position: relative; */
+  max-height: 390px;
   background: #7fe1b0;
 }
 
@@ -116,16 +154,20 @@ p {
   width: 100%;
 }
 
-  
-      .product-item-content {
-          border: 1px solid var(--surface-d);
-          border-radius: 3px;
-          margin: .3rem;
-          text-align: center;
-          padding: 2rem 0;
-      }
 
-      .product-image {
-          width: 50%;
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
-      }  
+.product-item-content {
+  border: 1px solid var(--surface-d);
+  border-radius: 3px;
+  margin: .3rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.product-image {
+  width: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+}
+
+.p-text-black {
+  color: #000000 !important;
+}
