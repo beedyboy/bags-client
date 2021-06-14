@@ -2,14 +2,12 @@ import React, { Fragment, useState } from "react";
 import { Toolbar } from "primereact/toolbar";
 import { useHistory } from "react-router-dom";
 import { Button } from "primereact/button";
-import classNames from "classnames";
-// import {
-//   isMobile, deviceType
-// } from "react-device-detect";
+import classNames from "classnames"; 
 import Sidebar from "./Sidebar";
+import categories from '../../engine/categories.json';
 
 const TopMenu = (props) => {
-  const { isMobile } = props;
+  const { isMobile, data } = props;
   const [sidebarActive, setSidebarActive] = useState(false);
   const history = useHistory();
   const [activeIndex, setActiveIndex] = useState(3);
@@ -17,7 +15,8 @@ const TopMenu = (props) => {
     setActiveIndex(index);
     history.push(`/${page}`);
   };
-  console.log({ sidebarActive });
+  // console.log({ sidebarActive });
+  
   const leftContents = (
     <React.Fragment>
       <div className="p-d-flex p-jc-between p-ac-between">

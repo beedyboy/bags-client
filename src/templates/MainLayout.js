@@ -1,25 +1,28 @@
-import React, { Fragment } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { Fragment, useContext, useEffect } from "react";
 import { Footer } from "./Components/Footer";
 import TopBar from "./Components/TopBar";
 import TopMenu from "./Components/TopMenu";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import Sidebar from "./Components/Sidebar";
 import "./responsive.css";
-import { isMobile } from "react-device-detect";
+import SubCategoryStore from "../store/SubCategoryStore";
+import { observer } from "mobx-react-lite";
 
 import { useMediaQuery } from "react-responsive";
 const MainLayout = (props) => {
   const isMobile = useMediaQuery({ maxWidth: 799 });
   const { children } = props;
-  const Mobile = ({ children }) => {
-    return isMobile ? children : null;
-  };
-
+  const catStore = useContext(SubCategoryStore);
+  const { getSubCategories, subcategory } = catStore;
   const Desktop = ({ children }) => {
     const isDesktop = useMediaQuery({ minWidth: 800 });
     return isDesktop ? children : null;
   };
 
+  useEffect(() => {
+    getSubCategories();
+  }, []);
   return (
     <Fragment>
       <div className="layout-wrapper">
@@ -31,7 +34,7 @@ const MainLayout = (props) => {
           </Desktop>
 
           {/* </div> */}
-          <TopMenu isMobile={isMobile} />
+          <TopMenu isMobile={isMobile} data={subcategory} />
           <div className="p-d-flex p-mb-4">
             <Desktop>
               <div className="layout-sidebar inactive p-mr-2">
@@ -48,4 +51,4 @@ const MainLayout = (props) => {
   );
 };
 
-export default MainLayout;
+export default observer(MainLayout);

@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-
+import React, { Fragment } from "react"; 
+import { Accordion, AccordionTab } from 'primereact/accordion';
 import { PanelMenu } from "primereact/panelmenu";
 
 const Sidebar = () => {
@@ -43,7 +43,11 @@ const Sidebar = () => {
   ];
   return (
     <Fragment>
-      <PanelMenu model={items} style={{ width: "22rem" }} />
+      {/* <PanelMenu model={items} style={{ width: "22rem" }} />
+       */}
+       <Accordion>
+           
+       </Accordion>
     </Fragment>
   );
 };

@@ -14,10 +14,9 @@ const Landing = () => {
     featuredProduct,
     arrivalProduct,
     getProducts,
-    loading,
-    allProduct,
+    loading, 
   } = productStore;
-  console.log({ allProduct });
+  // console.log({ allProduct });
   useEffect(() => {
     getProducts();
   }, []);
