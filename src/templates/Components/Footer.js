@@ -65,7 +65,8 @@ export const Footer = () => {
       </div>
     
     </div>
-   
+    {/* &copy; */}
+                    {/* {new Date().getFullYear()}{" "} */}
     </footer>
   );
 };

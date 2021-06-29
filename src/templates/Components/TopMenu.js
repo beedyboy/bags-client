@@ -3,8 +3,7 @@ import { Toolbar } from "primereact/toolbar";
 import { useHistory } from "react-router-dom";
 import { Button } from "primereact/button";
 import classNames from "classnames"; 
-import Sidebar from "./Sidebar";
-import categories from '../../engine/categories.json';
+import Sidebar from "./Sidebar"; 
 
 const TopMenu = (props) => {
   const { isMobile, data } = props;

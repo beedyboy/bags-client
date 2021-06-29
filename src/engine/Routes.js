@@ -3,7 +3,8 @@ import { HashRouter as Router, Switch, Redirect } from "react-router-dom";
 import {
     LandingView,
     NotFoundView,
-    ProductView
+    ProductView,
+    CategoryView
 } from '../pages'; 
 import NormalRoute from '../HOC/NormalRoute';
 import { SingleView, GeneralView } from '../templates';
@@ -27,13 +28,13 @@ const Routes = () => {
         layout={GeneralView}
         path="/products"
       />
-       {/* <NormalRoute
-        component={ResetPasswordView}
+   <NormalRoute
+        component={CategoryView}
         exact
-        layout={NormalLayout}
-        path="/reset-password/:token/:id"
+        layout={GeneralView}
+        path="/category/:slug"
       />
-     */} 
+     
      <NormalRoute
         component={NotFoundView}
         exact

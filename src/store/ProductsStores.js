@@ -44,6 +44,7 @@ class ProductStore {
       productSlugMenu: computed, 
       brandedProduct: computed, 
       featuredProduct: computed,
+      products: computed,
       arrivalProduct: computed,
       getProductsBySubCategory: action,
       sending: observable,
@@ -225,6 +226,11 @@ class ProductStore {
   get productSlugMenu() {
     return Object.keys(this.productsBySlug || {}).map((key) => ({
       ...this.productsBySlug[key],
+    }));
+  } 
+  get products() {
+    return Object.keys(this.allProduct || {}).map((key) => ({
+      ...this.allProduct[key],
     }));
   }
   get brandedProduct() {

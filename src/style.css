@@ -3,12 +3,15 @@
 }
 
 html {
-  height: 100%; 
+  height: 100%;
 }
-html, body {
+
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
 body {
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
   /* background: #E5E5E5; */
@@ -18,7 +21,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
-  min-height: 100%; 
+  min-height: 100%;
 }
 
 .app-color {
@@ -170,4 +173,113 @@ p {
 
 .p-text-black {
   color: #000000 !important;
+}
+
+.product-wrapper {
+  width: 300px;
+  height: 300px;
+  /* background: white;*/
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Montserrat;
+	background: #262626; 
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0;
+  transform: scale(0.95);
+  transition: box-shadow 0.5s, transform 0.5s;
+
+}
+
+.product-wrapper:hover {
+  transform: scale(1);
+  box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+	background: #fff;
+  display: flex;
+	align-items: center;
+  flex-direction: column;
+}
+
+.product-top {
+  height: 80%;
+  width: 100%;
+}
+
+.product-top img {
+  width: 100%;
+}
+
+.product-bottom {
+  /* width: 100%; */
+  width: fit-content;
+	height: fit-content;
+	margin-top: 10px;
+	z-index: 3;
+  /* height: calc(20% - 10px); */
+  /* transition: transform 0.5s; */
+}
+
+.product-bottom a {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	font-size: 11px;
+	color: #111;
+	text-decoration: none;
+	padding: 10px 15px;
+	border: 1px solid #aaa;
+	font-weight: bold; 
+	
+}
+
+
+.product-bottom a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 0%;
+  background: #111;
+  height: 100%;
+  z-index: -1;
+	/* color: #fff; */
+  transition: width 0.3s ease-in-out;
+  transform: skew(-25deg);
+  transform-origin: right; 
+}
+.product-bottom a:hover:after {
+	width: 150%;
+	left: -10px;
+	transform-origin: left; 
+  transition: background 0.5s;
+}
+
+.product-bottom a:hover {
+	color: #fff;
+	transition: all 0.5s ease;
+}
+.product-bottom a:nth-of-type(1) {
+	border-radius: 50px 0 0 50px;
+	border-right: none;
+}
+
+.product-bottom a:nth-of-type(2) {
+	border-radius: 0px 50px 50px 0;
+}
+.product-details {
+  float: right;
+  width: calc(30% - 2px);
+  height: 100%;
+  background: #f1f1f1;
+  transition: background 0.5s;
+  border-left: solid thin rgba(0, 0, 0, 0.1);
 }
