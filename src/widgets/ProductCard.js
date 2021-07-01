@@ -1,9 +1,11 @@
 import React, { Fragment, useState } from "react";
 import { Tooltip } from "primereact/tooltip";
-import { serverUrl } from "../engine/config";
+import { Chip } from "primereact/chip";
+import { serverUrl, clientUrl } from '../engine/config';
 import { toJS } from "mobx";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
+import { Link } from "react-router-dom";
 const ProductCard = (props) => {
   const { data } = props;
   const [imgIdx, setIdx] = useState(0);
@@ -24,13 +26,17 @@ const ProductCard = (props) => {
                   "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png")
               }
               alt={product.id}
-              className="product-image"
               onClick={() => setIsOpen(true)}
+            />
+            <Chip
+              className="totalImg"
+              label={images.length}
+              icon="pi pi-camera"
             />
           </div>
           <div className="product-bottom">
             <a
-              href={`https://api.whatsapp.com/send?phone=2348181575752&amp;text=${product.id};source=&amp;data=&amp;app_absent=`}
+              href={`https://api.whatsapp.com/send?phone=2348181575752&amp;text=${clientUrl}#/${product.product_name};source=&amp;data=&amp;app_absent=`}
               target="_blank"
               rel="noreferrer"
               className="inquire"
@@ -39,9 +45,12 @@ const ProductCard = (props) => {
             >
               <i className="fa fa-whatsapp"></i>{" "}
             </a>
-            <a href="/" className="cart-btn">
+            <Link to={`/products/${data.product_name}`}>
+            <i className="cart-icon pi pi-icon-search"></i>VIEW
+            </Link>
+            {/* <a href="/" className="cart-btn">
               <i className="cart-icon pi pi-icon-search"></i>VIEW
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

@@ -9,8 +9,7 @@ const Products = () => {
   const { loading, getProducts, allProduct: data } = store;
   useEffect(() => {
     getProducts();
-  }, []);
-  console.log({ data }); 
+  }, []); 
   
   return (
     <Fragment>

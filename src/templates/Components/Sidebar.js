@@ -72,7 +72,8 @@ const Sidebar = (props) => {
         model={MenuGroup()}
         expandIcon="pi pi-chevron-right"
         collapseIcon="pi pi-chevron-down"
-        // style={{ width: "22rem" }}
+        // style={{ borderRight: 0 }}
+        multiple
         iconPos="right"
         className="p-text-capitalize"
       />

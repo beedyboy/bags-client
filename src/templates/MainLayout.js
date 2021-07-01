@@ -41,7 +41,7 @@ const MainLayout = (props) => {
               </div>
             </Desktop>
 
-            <div className="d-flex d-flex-column p-p-2">{children}</div>
+            <div className="d-flex d-flex-column p-p-2" style={{ width: "100%"}}>{children}</div>
           </div>
           <Footer />
         </PerfectScrollbar>

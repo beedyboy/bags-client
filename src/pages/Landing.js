@@ -24,14 +24,14 @@ const Landing = () => {
   return (
     <>
       <div className="p-d-flex p-flex-column p-jc-between p-ac-between">
-        {/* <div className="banner"> */}
-          <SlideBanner />
-        {/* </div> */}
+            <SlideBanner /> 
+            <section>
         <Categories />
+            </section>
 
         <div
-          className="p-d-flex p-jc-between p-ac-between p-mt-5"
-          style={{ width: "100%" }}
+          className="p-d-flex p-jc-between p-ac-between p-ml-2 p-mr-2 p-mt-5"
+          // style={{ width: "100%" }}
         >
           <BannerCard
             image="/assets/banners/left.png"

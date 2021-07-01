@@ -5,9 +5,7 @@ import backend from "../engine/config";
 class ProductStore {
   error = false;
   loading = false;
-  sending = false;
-  removed = false;
-  removingItem = false;
+  sending = false; 
   message = "";
   action = null;
   errMessage = "";
@@ -26,20 +24,17 @@ class ProductStore {
       loading: observable,
       similarProducts: observable,
       message: observable,
-      allProduct: observable,
-      removingItem: observable,
+      allProduct: observable, 
       product: observable,
       productsBySlug: observable,
       errMessage: observable,
       productsByCategory: observable,
-      getProducts: action,
-      addProduct: action,
-      updateProduct: action,
+      getProducts: action, 
       getSimilarProductItem: action,
       getProductsByCategory: action,
+      getProductInfo: action,
       productsBySubCategory: observable,
-      getProductsBySlug: action,
-      removeProduct: action,
+      getProductsBySlug: action, 
       resetProperty: action,
       productSlugMenu: computed, 
       brandedProduct: computed, 
@@ -47,8 +42,7 @@ class ProductStore {
       products: computed,
       arrivalProduct: computed,
       getProductsBySubCategory: action,
-      sending: observable,
-      removed: observable,
+      sending: observable, 
       stats: computed,
     });
   }
@@ -57,6 +51,20 @@ class ProductStore {
     this.loading = true;
     try {
       backend.get(`/products/${id}`).then((res) => {
+        this.loading = false;
+        if (res.status === 200) {
+          this.product = res.data;
+        }
+      });
+    } catch (err) {
+      this.error = err;
+    }
+  };
+
+  getProductInfo = (name) => {
+    this.loading = true;
+    try {
+      backend.get(`/products/${name}/details`).then((res) => {
         this.loading = false;
         if (res.status === 200) {
           this.product = res.data;
@@ -89,11 +97,11 @@ class ProductStore {
 
   getProductsByCategory = (category_menu) => {
     this.loading = true;
-    backend.get(`/products?category_menu=${category_menu}`).then((res) => {
+    backend.get(`/products/category_menu/${category_menu}`).then((res) => {
       this.loading = false;
       try {
-        if (res.data.status) {
-          this.productsByCategory = res.data.data;
+        if (res.status === 200) {
+          this.productsByCategory = res.data;
         }
       } catch (err) {}
     });
@@ -101,7 +109,7 @@ class ProductStore {
 
   getProductsBySubCategory = (category_id) => {
     this.loading = true;
-    backend.get(`/products?category=${category_id}`).then((res) => {
+    backend.get(`/products/category=${category_id}/sub`).then((res) => {
       try {
         this.loading = false;
         if (res.data.status) {
@@ -114,99 +122,7 @@ class ProductStore {
   getSimilarProductItem = () => {
     this.similarProducts = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
   };
-
-  addProduct = (data) => {
-    try {
-      this.sending = true;
-      backend
-        .post("products", data)
-        .then((res) => {
-          this.sending = false;
-          if (res.status === 201) {
-            this.getProducts();
-            this.message = res.data.message;
-            this.action = "productAdded";
-          } else {
-            this.message = res.data.error;
-            this.action = "productError";
-            this.error = true;
-          }
-        })
-        .catch((err) => {
-          this.sending = false;
-          if (err.response && err.response.status === 404) {
-            console.log("error in axios catch");
-            this.message = err.response.data.message;
-            this.error = true;
-          } else {
-            console.log({ err });
-          }
-        });
-    } catch (err) {
-      this.sending = false;
-      if (err.response.status === 500) {
-        console.log("There was a problem with the server");
-      } else {
-        console.log(err.response.data.msg);
-      }
-    }
-  };
-
-  updateProduct = (data) => {
-    try {
-      this.sending = true;
-      backend
-        .put("products", data)
-        .then((res) => {
-          this.sending = false;
-          if (res.status === 200) {
-            this.getProducts();
-            this.message = res.data.message;
-            this.action = "productAdded";
-          } else {
-            this.message = res.data.error;
-            this.action = "productError";
-            this.error = true;
-          }
-        })
-        .catch((err) => {
-          this.sending = false;
-          if (err.response && err.response.status === 404) {
-            console.log("error in axios catch");
-            this.message = err.response.data.message;
-            this.error = true;
-          } else {
-            console.log({ err });
-          }
-        });
-    } catch (err) {
-      this.sending = false;
-      if (err.response.status === 500) {
-        console.log("There was a problem with the server");
-      } else {
-        console.log(err.response.data.msg);
-      }
-    }
-  };
-
-  removeProduct = (id) => {
-    this.removed = false;
-    try {
-      backend.delete(`products/${id}`).then((res) => {
-        if (res.status === 200) {
-          this.getProducts();
-          this.message = res.data.message;
-          this.removed = true;
-        } else {
-          this.message = res.data.error;
-          this.error = true;
-          this.removed = false;
-        }
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+ 
   resetProperty = (key, value) => {
     this[key] = value;
   };
