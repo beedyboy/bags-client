@@ -6,18 +6,28 @@ import Helmet from "react-helmet";
 import { useParams } from "react-router-dom";
 import ProductsStores from "../store/ProductsStores";
 import ReactHtmlParser from "react-html-parser";
-import { serverUrl, clientUrl } from '../engine/config';
+import { serverUrl, clientUrl } from "../engine/config";
 import { Galleria } from "primereact/galleria";
 import { Divider } from "primereact/divider";
 import { BreadCrumb } from "primereact/breadcrumb";
 import categories from "../engine/categories.json";
+import SearchStore from "../store/SearchStore";
+import ProductLoading from "../widgets/ProductLoading";
+import Recommender from "../views/Product/Recommender";
 const ProductDetails = () => {
   const params = useParams();
   const store = useContext(ProductsStores);
+  const searchStore = useContext(SearchStore);
   const { loading, getProductInfo, product: data } = store;
+  const { fetching, getRecommendations, recommends } = searchStore;
   useEffect(() => {
     getProductInfo(params.slug);
   }, []);
+  useEffect(() => {
+   if(data && data.length > 0) {
+    searchProperty();
+   }
+  }, [data]);
   const responsiveOptions = [
     {
       breakpoint: "1024px",
@@ -75,7 +85,29 @@ const ProductDetails = () => {
       />
     );
   };
- 
+
+  const searchProperty = () => {
+    // let url = "";
+    const query = {
+      id: data && data.id,
+      category: data && data.category,
+    };
+    if (data && data.brandName) {
+      query.brandName = data && data.brandName;
+    }
+    if (data && data.brand_id) {
+      query.brand_id = data && data.brand_id;
+    }
+    if (data && data.sub_id) {
+      query.sub_id = data && data.sub_id;
+    }
+
+    if (data && data.product_name) {
+      query.product_name = data && data.product_name;
+    }
+
+    getRecommendations(query);
+  };
   return (
     <Fragment>
       <Helmet>
@@ -100,7 +132,7 @@ const ProductDetails = () => {
             />
           </div>
         </div>
-        <Divider layout="vertical"  />
+        <Divider layout="vertical" />
         <div className="card p-mr-2 ">
           <h4 className="p-text-bold">Description</h4>
           <Divider />
@@ -120,6 +152,13 @@ const ProductDetails = () => {
             <i className="fa fa-whatsapp"></i>{" "}
           </a>
         </div>
+      </div>
+      <div className="p-d-flex">
+        {!loading && fetching ? (
+          <ProductLoading loading={fetching} />
+        ) : (
+          <Recommender data={recommends} />
+        )}
       </div>
     </Fragment>
   );

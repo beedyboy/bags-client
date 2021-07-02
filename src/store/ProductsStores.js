@@ -29,12 +29,10 @@ class ProductStore {
       productsBySlug: observable,
       errMessage: observable,
       productsByCategory: observable,
-      getProducts: action, 
-      getSimilarProductItem: action,
+      getProducts: action,  
       getProductsByCategory: action,
       getProductInfo: action,
-      productsBySubCategory: observable,
-      getProductsBySlug: action, 
+      productsBySubCategory: observable, 
       resetProperty: action,
       productSlugMenu: computed, 
       brandedProduct: computed, 
@@ -84,16 +82,7 @@ class ProductStore {
       }
     });
   };
-
-  getProductsBySlug = (slug) => {
-    this.loading = true;
-    backend.get(`/products?slug=${slug}`).then((res) => {
-      this.loading = false;
-      if (res.data.status) {
-        this.product = res.data.data[0];
-      }
-    });
-  };
+ 
 
   getProductsByCategory = (category_menu) => {
     this.loading = true;
@@ -118,10 +107,7 @@ class ProductStore {
       } catch (err) {}
     });
   };
-
-  getSimilarProductItem = () => {
-    this.similarProducts = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
-  };
+ ;
  
   resetProperty = (key, value) => {
     this[key] = value;
