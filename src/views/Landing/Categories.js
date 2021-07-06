@@ -33,12 +33,12 @@ const Categories = () => {
       <div className="p-d-flex p-jc-center p-ac-between p-flex-wrap">
         {images.map((item) => {
           return (
-            <>
-              <a href={item.src} className="p-d-flex p-flex-column p-mr-3" key={shortId.generate()}>
+            <Fragment key={shortId.generate()}>
+              <a href={item.src} className="p-d-flex p-flex-column p-mr-3">
                 <img src={item.src} alt={item.src} className="ellipse" />
                 <p className="ellipse-text p-text-center">{item.alt}</p>
               </a>
-            </>
+            </Fragment>
           );
           //   return ;
         })}

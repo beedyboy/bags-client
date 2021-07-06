@@ -30,7 +30,7 @@ const ProductCard = (props) => {
             />
             <Chip
               className="totalImg"
-              label={images.length}
+              label={images.length.toString()}
               icon="pi pi-camera"
             />
           </div>

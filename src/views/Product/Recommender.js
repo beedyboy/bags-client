@@ -7,10 +7,9 @@ const Recommender = (props) => {
   return (
     <Fragment>
       <div className="tabview-demo">
-        <div className="card">
-          {/* <div className="p-text-center section-headers p-mt-3 p-mb-1"> Products</div> */}
+        <div className="card"> 
           <Divider>
-            <b>Recommended Products</b>
+            <b className="p-text-center section-headers p-mt-3 p-mb-1">Recommended Products</b>
           </Divider>
           {data && data.length > 0 ? (
             <ProductCarosel products={data} />

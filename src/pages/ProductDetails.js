@@ -22,9 +22,10 @@ const ProductDetails = () => {
   const { fetching, getRecommendations, recommends } = searchStore;
   useEffect(() => {
     getProductInfo(params.slug);
-  }, []);
+  }, [params.slug]);
   useEffect(() => {
-   if(data && data.length > 0) {
+   if(data && data.id > 0) {
+    //  console.log('call recom')
     searchProperty();
    }
   }, [data]);

@@ -10,7 +10,7 @@ const Sidebar = (props) => {
     let items = [];
     const subs = data.filter((a) => a.category === slug);
     if (subs.length === 0) return;
-    subs.map((item) => {
+    subs.forEach((item) => {
       const d = {
         label: item.name,
         command: () => {
@@ -25,7 +25,7 @@ const Sidebar = (props) => {
   const MenuGroup = () => {
     let items = [];
     categories &&
-      categories.data.map((item) => {
+      categories.data.forEach((item) => {
         const sub = menuSubCategory(item.value);
         const d = {
           label: item.label,
@@ -39,6 +39,7 @@ const Sidebar = (props) => {
                   const titleClassName = `${options.labelClassName}`;
                   return (
                     /* custom element */
+                    // eslint-disable-next-line jsx-a11y/anchor-is-valid
                     <a href="#" className={className}  onClick={options.onClick}>
                       <span className={titleClassName}>{item.label}</span>
                       <span

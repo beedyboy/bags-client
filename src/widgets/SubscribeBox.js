@@ -1,9 +1,22 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState, useContext } from "react";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
+import { observer } from "mobx-react-lite";
+import SubscriberStore from "../store/SubscriberStore";
 
 const SubscribeBox = () => {
+  const store = useContext(SubscriberStore);
+  const { loading, subscribe, saved} = store;
   const [email, setEmail] = useState("");
+  useEffect(() => {
+   if(saved === true) {
+    setEmail("");
+   }
+  }, [saved]);
+  const submit = () => {
+    const data = { email: email};
+    subscribe(data)
+  }
   return (
     <Fragment>
       <div
@@ -70,6 +83,7 @@ const SubscribeBox = () => {
                 borderBottom: "3px solid #FFFFFF",
                 background: "transparent",
               }}
+              onClick={submit}
             />
           </div>
         </div>
@@ -78,4 +92,4 @@ const SubscribeBox = () => {
   );
 };
 
-export default SubscribeBox;
+export default observer(SubscribeBox);

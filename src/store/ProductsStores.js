@@ -1,4 +1,4 @@
-import { makeObservable, observable, action, computed } from "mobx";
+import { makeObservable, observable, action, runInAction, computed } from "mobx";
 import { createContext } from "react";
 import backend from "../engine/config";
 
@@ -63,10 +63,13 @@ class ProductStore {
     this.loading = true;
     try {
       backend.get(`/products/${name}/details`).then((res) => {
+        runInAction(() => {
         this.loading = false;
         if (res.status === 200) {
           this.product = res.data;
         }
+
+        })
       });
     } catch (err) {
       this.error = err;

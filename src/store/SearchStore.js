@@ -1,19 +1,18 @@
-import { makeObservable, observable, action, computed } from "mobx";
+import { makeObservable, observable, runInAction, action } from "mobx";
 import { createContext } from "react";
 import backend from "../engine/config";
 
 class SearchStore {
   error = false;
   fetching = false; 
-  message = "";
-  action = null;
+  message = ""; 
   errMessage = ""; 
   searches = []; 
   recommends = [];
 
+   
   constructor() {
-    makeObservable(this, {
-      action: observable,
+    makeObservable(this, { 
       error: observable,
       fetching: observable,
       recommends: observable,
@@ -30,10 +29,13 @@ class SearchStore {
   getRecommendations = (data) => {
     this.fetching = true;
     backend.post(`/search/recommend`, data).then((res) => {
+      runInAction(() => {
       this.fetching = false;
       if (res.status === 200) {
         this.recommends = res.data;
       }
+
+      })
     });
   };
   searchProducts = (data) => {

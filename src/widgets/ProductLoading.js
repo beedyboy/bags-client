@@ -17,7 +17,7 @@ const ProductLoading = (props) => {
       );
     });
   };
-  return <>{!loading ? null : <div className="p-d-flex p-mb-3">{item}</div>}</>;
+  return <>{!loading ? null : <div className="p-d-flex p-mb-3">{item()}</div>}</>;
 };
 
 export default ProductLoading;

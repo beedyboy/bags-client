@@ -1,4 +1,4 @@
-import { makeObservable, observable, action, computed } from "mobx";  
+import { makeObservable, observable, runInAction, action, computed } from "mobx";  
 import { createContext } from "react";
 import backend from "../engine/config";
 class SubCategoryStore {
@@ -26,8 +26,11 @@ class SubCategoryStore {
   getSubCategories = () => {
     this.loading = true;
     backend.get("subcategory").then((res) => {
+      runInAction(()=> {
       this.subcategory = res.data;
       this.loading = false;
+
+      })
     });
   }; 
   getSubByCategory = (category) => {
