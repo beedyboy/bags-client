@@ -340,3 +340,20 @@ right: 90%
   /* opacity: 0.5;
   pointer-events: auto; */
 }
+.w-100 {
+  width: 100% !important;
+} 
+.w-50 {
+  width: 50% !important;
+} 
+.footer-link {
+  list-style: none; 
+  left: 50%;
+  line-height: 1em;
+}
+.ui-accordion .ui-accordion-header .ui-icon {
+  margin-top: -8px;
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+}

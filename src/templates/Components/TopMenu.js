@@ -6,7 +6,7 @@ import classNames from "classnames";
 import Sidebar from "./Sidebar"; 
 
 const TopMenu = (props) => {
-  const { isMobile, data } = props;
+  const { isMobile } = props;
   const [sidebarActive, setSidebarActive] = useState(false);
   const history = useHistory();
   const [activeIndex, setActiveIndex] = useState(3);
@@ -19,7 +19,7 @@ const TopMenu = (props) => {
   const leftContents = (
     <React.Fragment>
       <div className="p-d-flex p-jc-between p-ac-between">
-        <div className="p-text-capitalize bags-title">
+        <div className="p-text-uppercase bags-title">
           Bags warehouse & more
         </div>
       </div>
@@ -37,17 +37,17 @@ const TopMenu = (props) => {
       <div className="p-d-flex  p-flex-wrap p-jc-between p-ai-between">
         <Button
           onClick={() => switchPage(0, "home")}
-          className="p-button-text p-text-black "
+          className={`p-button-text  ${activeIndex === 0 ? 'p-text-main': 'p-text-black'}`}
           label="Home"
         />
         <Button
           onClick={() => switchPage(1, "products")}
-          className="p-button-text p-text-black "
+          className={`p-button-text  ${activeIndex === 1 ? 'p-text-main': 'p-text-black'}`}
           label="Products"
         />
         <Button
-          onClick={() => switchPage(2, "contact")}
-          className="p-button-text p-text-black "
+          onClick={() => switchPage(2, "contact-us")}
+          className={`p-button-text  ${activeIndex === 2 ? 'p-text-main': 'p-text-black'}`}
           label="Contact"
         />
         {/* <div className="p-inputgroup">

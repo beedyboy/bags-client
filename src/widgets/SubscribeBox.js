@@ -1,22 +1,42 @@
-import React, { Fragment, useEffect, useState, useContext } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {
+  Fragment,
+  useEffect,
+  useState,
+  useContext,
+  useRef,
+} from "react";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
+import { Toast } from "primereact/toast";
 import { observer } from "mobx-react-lite";
 import SubscriberStore from "../store/SubscriberStore";
 
 const SubscribeBox = () => {
+  const toast = useRef(null);
   const store = useContext(SubscriberStore);
-  const { loading, subscribe, saved} = store;
+  const { loading, resetProperty, subscribe, message, saved } = store;
   const [email, setEmail] = useState("");
+
   useEffect(() => {
-   if(saved === true) {
-    setEmail("");
-   }
+    if (saved) {
+      toast.current.show({
+        severity: "success",
+        summary: "Success Message",
+        detail: message,
+      });
+      setEmail("");
+    }
+    return () => {
+      resetProperty("message", "");
+      resetProperty("saved", false);
+      setEmail("");
+    };
   }, [saved]);
   const submit = () => {
-    const data = { email: email};
-    subscribe(data)
-  }
+    const data = { email: email };
+    subscribe(data);
+  };
   return (
     <Fragment>
       <div
@@ -34,7 +54,8 @@ const SubscribeBox = () => {
             textAlign: "left",
           }}
         >
-          Let's Be Friends
+          {/* Let's Be Friends */}
+          Join The Party
         </p>
         <p
           style={{
@@ -78,6 +99,7 @@ const SubscribeBox = () => {
             <Button
               label="Subscribe"
               className="p-button-plain"
+              loading={loading}
               style={{
                 border: 0,
                 borderBottom: "3px solid #FFFFFF",
@@ -88,6 +110,7 @@ const SubscribeBox = () => {
           </div>
         </div>
       </div>
+      <Toast ref={toast} position="top-right" />
     </Fragment>
   );
 };

@@ -1,12 +1,14 @@
 import React from "react";
 import { HashRouter as Router, Switch, Redirect } from "react-router-dom";
 import {
-  LandingView,
-  NotFoundView,
-  ProductView,
-  CategoryView,
-  ProductDetailsView,
-} from "../pages";
+    LandingView,
+    NotFoundView,
+    ProductView,
+    CategoryView,
+    ProductDetailsView,
+    ContactView,
+    FAQView
+} from '../pages';
 import NormalRoute from "../HOC/NormalRoute";
 import { SingleView, GeneralView } from "../templates";
 
@@ -23,10 +25,22 @@ const Routes = () => {
           path="/home"
         />
         <NormalRoute
+          component={FAQView}
+          exact
+          layout={GeneralView}
+          path="/faq"
+        />
+        <NormalRoute
           component={ProductView}
           exact
           layout={GeneralView}
           path="/products"
+        />
+        <NormalRoute
+          component={ContactView}
+          exact
+          layout={GeneralView}
+          path="/contact-us"
         />
         <NormalRoute
           component={CategoryView}

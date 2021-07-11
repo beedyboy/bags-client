@@ -29,7 +29,7 @@ const Categories = () => {
   ];
   return (
     <Fragment>
-      <div className="p-text-center section-headers p-mb-3"> Categories</div>
+      <div className="p-text-center p-text-uppercase section-headers p-mb-3">Browse Categories</div>
       <div className="p-d-flex p-jc-center p-ac-between p-flex-wrap">
         {images.map((item) => {
           return (

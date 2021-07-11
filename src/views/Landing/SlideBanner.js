@@ -54,18 +54,18 @@ const SlideBanner = () => {
       </div>
     );
   };
-  const indicatorTemplate = (index) => {
-    return <span className="indicator-text">{index + 1}</span>;
-  };
+  // const indicatorTemplate = (index) => {
+  //   return <span className="indicator-text">{index + 1}</span>;
+  // };
 
-  const caption = (item) => {
-    return (
-      <React.Fragment>
-        <h4 className="p-mb-2">{item.title}</h4>
-        <p>{item.alt}</p>
-      </React.Fragment>
-    );
-  };
+  // const caption = (item) => {
+  //   return (
+  //     <React.Fragment>
+  //       <h4 className="p-mb-2">{item.title}</h4>
+  //       <p>{item.alt}</p>
+  //     </React.Fragment>
+  //   );
+  // };
   return (
     <Fragment> 
       <div className="landing_banner p-mb-3">

@@ -70,12 +70,10 @@ const Sidebar = (props) => {
   return (
     <Fragment>
       <PanelMenu
-        model={MenuGroup()}
-        expandIcon="pi pi-chevron-right"
-        collapseIcon="pi pi-chevron-down"
+        model={MenuGroup()} 
         // style={{ borderRight: 0 }}
         multiple
-        iconPos="right"
+        // iconPos="right"
         className="p-text-capitalize"
       />
 

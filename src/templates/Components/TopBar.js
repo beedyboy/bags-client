@@ -12,22 +12,26 @@ const TopBar = () => {
   );
   const rightContents = (
     <React.Fragment>
-      <div className="p-d-flex p-jc-between p-ac-between">
+      {/* <div className="p-d-flex p-jc-between p-ac-between"> */}
         <a target="_blank" href="/facebook">
           {" "}
-          <i className="pi pi-facebook" />
+          <i className="fa fa-facebook fa-fw" />
         </a>
         <a target="_blank" href="/twitter">
           {" "}
-          <i className="pi pi-twitter" />
+          <i className="fa fa-twitter fa-fw" />
         </a>
-      </div>
+        <a target="_blank" href="/twitter">
+          {" "}
+          <i className="fa fa-instagram fa-fw" />
+        </a>
+      {/* </div> */}
     </React.Fragment>
   );
   return (
     <Fragment>
       <Toolbar
-        className="app-header"
+            className="app-header p-d-flex  p-flex-wrap p-jc-between"
         left={leftContents}
         right={rightContents}
       />

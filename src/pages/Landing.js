@@ -59,7 +59,7 @@ const Landing = () => {
           />
         </div>
         <div
-          className="p-d-flex p-p-5"
+          className="p-d-flex p-p-5 p-shadow-18"
           style={{ width: "100%" }}
           id="subscribersbox"
         >
