@@ -46,7 +46,7 @@ const TopMenu = (props) => {
           label="Products"
         />
         <Button
-          onClick={() => switchPage(2, "contact-us")}
+          onClick={() => switchPage(2, "pages/contact-us")}
           className={`p-button-text  ${activeIndex === 2 ? 'p-text-main': 'p-text-black'}`}
           label="Contact"
         />
