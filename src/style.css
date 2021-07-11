@@ -25,8 +25,12 @@ body {
 }
 
 .app-color {
-  color: #E17F93;
+  color: #E17F93; 
+}
 
+.app-bg {
+  background: #E17F93; 
+  color: white;
 }
 
 .white-color {
@@ -336,20 +340,59 @@ left: 100%
 .p-galleria-item-prev {
 right: 90%
 }
-.p-galleria-item-nav-onhover .p-galleria-item-nav {
-  /* opacity: 0.5;
-  pointer-events: auto; */
-}
+ 
 .w-100 {
   width: 100% !important;
 } 
 .w-50 {
   width: 50% !important;
+}
+ 
+.w-40 {
+  width: 40% !important;
 } 
+ 
+.w-30 {
+  width: 30% !important;
+} 
+.footer-container {
+  background: #e6e7e8;
+  font-size: .857rem;
+  line-height: 1.5em; 
+}
+footer > .column:first-child {
+  padding-left: 0;
+}
+footer > .column {
+  -webkit-box-flex: 1 1 auto;
+  -moz-box-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 0 20px 40px;
+}
+footer > .column .menu {
+  font-size: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  
+}
+ 
+footer .column .menu li {
+    display: block;
+    list-style: none;
+    margin: 0 0 10px 30%;
+    padding: 0;
+    position: relative;
+}
 .footer-link {
   list-style: none; 
   left: 50%;
   line-height: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .ui-accordion .ui-accordion-header .ui-icon {
   margin-top: -8px;

@@ -28,7 +28,7 @@ const Routes = () => {
           component={FAQView}
           exact
           layout={GeneralView}
-          path="/faq"
+          path="/pages/faq"
         />
         <NormalRoute
           component={ProductView}
@@ -40,7 +40,7 @@ const Routes = () => {
           component={ContactView}
           exact
           layout={GeneralView}
-          path="/contact-us"
+          path="/pages/contact-us"
         />
         <NormalRoute
           component={CategoryView}

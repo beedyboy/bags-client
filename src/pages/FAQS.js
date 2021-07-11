@@ -21,13 +21,13 @@ const FAQS = () => {
           // style={{ width: "fit-content", height: "100%" }}
         />
         <div className="p-text-center p-text-bold p-mb-4" style={{ marginTop: "-25%", zIndex:99999, color: 'white' }}>
-          Frequently Asked Questions(FAQ)
+         we're here to help
         </div>
         </div>
         
-         {/* <div className="p-text-center p-text-bold p-mb-4">
+         <div className="p-text-center p-text-bold p-mb-4">
           Frequently Asked Questions(FAQ)
-        </div> */}
+        </div>
         <div className="p-text-center p-text-bold p-mb-4">
           We've put together some commonly asked questions to give you more
           information about products and services we offer.

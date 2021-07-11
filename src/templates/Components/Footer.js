@@ -7,12 +7,13 @@ export const Footer = () => {
     <footer>
       <div className="p-d-flex d-flex-column p-flex-wrap p-jc-between">
         <div
-          className="p-d-flex p-flex-wrap p-jc-between w-100"
-          style={{ background: "#C4C4C4" }}
+          className="p-d-flex p-flex-wrap p-jc-between w-100 footer-container"
+         
         >
-          <div className="p-d-flex p-flex-column p-jc-between p-ac-between w-50 p-p-2">
-            <div className="p-text-center p-text-bold p-mb-4">Map Location</div>
-            <div className="gmap_canvas p-pl-2">
+          <div className="p-d-flex p-flex-column p-jc-between p-ac-between w-40 p-p-2"> 
+            <h4 className="p-text-center p-text-uppercase p-text-bold">Map Location</h4>
+              
+                 <div className="gmap_canvas p-pl-2">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.3548844499096!2d3.3378086144131722!3d6.602744995225082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b92267f4514db%3A0x21a238fc27c2ecb0!2sBags%20warehouse1!5e0!3m2!1sen!2sng!4v1623592518235!5m2!1sen!2sng"
                 width="100%"
@@ -24,61 +25,53 @@ export const Footer = () => {
               ></iframe>
             </div>
           </div>
-          <div className="p-d-flex p-flex-column w-50 p-p-2">
-            <div className="p-text-center p-text-bold p-mb-4">
-              Quick Links
+   
+          <div className="p-d-flex p-flex-column w-30 p-p-2">
+            <div className=" p-mb-4 column">
+              <h4 className="p-text-center p-text-uppercase p-text-bold"> Quick Links</h4>
+              <ul class="menu p-text-capitalize">
+              <li><Link to="/pages/about-us">About Us</Link></li>
+              <li><Link to="/pages/contact-us">Contact Us</Link></li>
+              <li><Link to="/pages/careers">Careers</Link></li>
+              </ul>
             </div>
-            <ul className="footer-link">
-              <li><Link to="/payments">Payment & Order</Link></li>
-              <li><Link to="/contact-us">Contact Us</Link></li>
-              <li><Link to="/faq">FAQ</Link></li>
-            </ul>
-            <div className="p-d-flex p-flex-column p-text-justify p-text-uppercase">
              
-            </div>
           </div>
-        </div>
-        {/*         
-        <div
-          className="p-grid p-p-3 p-dir-column w-100 p-justify-around"
-          style={{ background: "#C4C4C4" }}
-        >
-          <div className="p-col-6">
-            <div className="p-d-flex p-flex-column p-jc-between p-ac-between">
-              <div className="p-text-center p-text-bold p-mb-4">
-                Map Location
-              </div>
-              <div className="gmap_canvas p-pl-2">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.3548844499096!2d3.3378086144131722!3d6.602744995225082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b92267f4514db%3A0x21a238fc27c2ecb0!2sBags%20warehouse1!5e0!3m2!1sen!2sng!4v1623592518235!5m2!1sen!2sng"
-                  width="100%"
-                  height="300"
-                  style={{ border: 0 }}
-                  // allowfullscreen=""
-                  loading="lazy"
-                  title="location"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-          <div className="p-col-6">
-            <div className="p-grid p-align-between">
-              <div className="p-text-center p-text-bold p-mb-4">
-                Let Us Help You
-              </div> 
-                <Link to="/payments" className="p-col-12">Payment</Link>
-                <Link to="/contact-us" className="p-col-12">Contact Us</Link>
-                <Link to="/faq" className="p-col-12">FAQ</Link> 
-            </div>
-          </div>
-        </div> */}
+     
+   
+          <div className="p-d-flex p-flex-column w-30 p-p-2">
+            <div className=" p-mb-4 column">
+              <h4 className="p-text-center p-text-uppercase p-text-bold">Help</h4>
+              <ul class="menu p-text-capitalize">
+                <li>
+                  <Link to="/pages/shipping-delivery">Shipping &amp; delivery</Link>
+                </li>
 
-        <div className="w-100">
+                <li>
+                  <Link to="/pages/payments-orders">Payment &amp; orders</Link>
+                </li>
+
+                <li>
+                  <Link to="/pages/returns">Returns</Link>
+                </li>
+
+                <li>
+                  <Link to="/pages/faq">FAQ</Link>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+     
+        </div>
+      
+
+        <div className="w-100 app-bg p-pb-1">
           <Divider />
-          <span>
+          <p className="p-text-center">
             Copyright &copy; {new Date().getFullYear()} Bags, Footwear and More
             - All Rights Reserved
-          </span>
+          </p>
         </div>
       </div>
       {/* <div className="p-col-6">
