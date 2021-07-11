@@ -1,9 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment } from "react";
-import { Accordion, AccordionTab } from "primereact/accordion";
-import { Ripple } from "primereact/ripple";
-import Helmet from "react-helmet";
-import classNames from "classnames";
+import { Accordion, AccordionTab } from "primereact/accordion"; 
+import Helmet from "react-helmet"; 
 const FAQS = () => {
   return (
     <Fragment>

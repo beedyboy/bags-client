@@ -1,7 +1,7 @@
 const express = require("express"); 
 const favicon = require('express-favicon'); 
 const path = require('path');  
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -15,5 +15,7 @@ app.get('/*', (req,res) => {
 });
  
  
-app.listen(port);
+app.listen(port, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
  
