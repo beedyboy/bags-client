@@ -1,3 +1,4 @@
+export { default as AboutView } from "./About";
 export { default as CategoryView } from "./Category";
 export { default as ContactView } from "./Contact";
 export { default as FAQView } from "./FAQS";

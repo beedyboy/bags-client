@@ -7,7 +7,8 @@ import {
     CategoryView,
     ProductDetailsView,
     ContactView,
-    FAQView
+    FAQView,
+    AboutView
 } from '../pages';
 import NormalRoute from "../HOC/NormalRoute";
 import { SingleView, GeneralView } from "../templates";
@@ -25,9 +26,15 @@ const Routes = () => {
           path="/home"
         />
         <NormalRoute
+          component={AboutView}
+          exact
+          layout={SingleView}
+          path="/pages/about-us"
+        />
+        <NormalRoute
           component={FAQView}
           exact
-          layout={GeneralView}
+          layout={SingleView}
           path="/pages/faq"
         />
         <NormalRoute
